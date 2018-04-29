@@ -1,0 +1,122 @@
+[data-theme=morning]{
+    --bg: linear-gradient(0deg, rgba(255, 244, 193, 0.8) 0%, rgba(109, 153, 173, 0.2) 100%);
+    --input-bg: rgba(255, 255, 255, 0.33);
+    --input-border: 1px solid var(--text-color);
+    --input-border-selected: 1px solid white;
+    --box-shadow-color: rgba(85, 55, 37, 0.2);
+    --text-color: rgba(8, 10, 104, 0.6);
+}
+[data-theme=afternoon]{
+    --bg: radial-gradient(circle at 50% 20%, rgba(255, 252, 213, 0.8) 20%, transparent 50%),
+    linear-gradient(0deg, rgba(243, 202, 115, 0.8) 0%, rgba(197, 45, 7, 0.753) 100%);
+    --input-bg: rgba(255, 255, 255, 0.603);
+    --input-border: 1px solid var(--text-color);
+    --input-border-selected: 1px solid red;
+    --box-shadow-color: rgba(82, 17, 6, 0.548);
+    --text-color: rgb(170, 34, 10);
+}
+[data-theme=midnight]{
+    --bg: 
+    linear-gradient(0deg, rgba(6, 6, 36, 0.8) 0%, transparent 100%),
+
+    radial-gradient(circle at 5% 25%, rgba(255, 254, 247, 0.555) 0px, transparent 5px),
+    radial-gradient(circle at 8% 50%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 10% 5%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 10% 68%, rgba(255, 254, 247, 0.555) 0px, transparent 2px),
+    radial-gradient(circle at 12% 45%, rgba(255, 254, 247, 0.555) 0%, transparent 3px),
+    radial-gradient(circle at 27% 60%, rgba(255, 254, 247, 0.555) 0%, transparent 2px),
+    radial-gradient(circle at 33% 88%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 37% 33%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 40% 63%, rgba(255, 254, 247, 0.555) 0%, transparent 4px),
+    radial-gradient(circle at 55% 51%, rgba(255, 254, 247, 0.555) 0%, transparent 3px),
+    radial-gradient(circle at 60% 80%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 80% 25%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 80% 55%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+    radial-gradient(circle at 88% 10%, rgba(255, 254, 247, 0.555) 0%, transparent 5px),
+
+    linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(12, 11, 65) 100%);
+    --input-bg: rgba(37, 16, 75, 0.33);
+    --input-border: 1px solid var(--text-color);
+    --input-border-selected: 1px solid rgb(44, 171, 255);
+    --box-shadow-color: rgba(236, 156, 8, 0.5);
+    --text-color: rgb(236, 156, 8);
+
+    animation: midnight-sky-move 40s linear infinite;
+}
+
+@keyframes midnight-sky-move{
+    0%{
+        background-position: 0 0;
+    }
+    0%{
+        background-position: -400px 0;
+    }
+}
+
+
+.theme{
+
+    display: inline-block;
+    width: 400px;
+    height: 800px;
+
+    padding: 24px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+
+    background: var(--bg);
+
+    h2{
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+
+        border-bottom-width: 2px;
+        border-bottom-style: solid; 
+    }
+
+    input, select{
+        width: 100%;
+        padding: 8px;
+        margin: 12px 0 24px;
+
+        border: var(--input-border);
+        border-radius: 4px;
+        
+        color: var(--text-color);
+
+        background-color: var(--input-bg);
+
+        &:focus{
+            outline: none;
+            border: var(--input-border-selected);
+        }
+    }
+
+    input[type=submit]{
+        // width: auto;
+        width: 60%;
+        padding: 24px 24px;
+
+        font-size: 1.2em;
+        font-weight: 600;
+        color: var(--text-color);
+        
+        box-shadow:  0 4px 4px var(--box-shadow-color);
+    }
+
+    select{
+
+        &:focus{
+
+            option{
+                padding: 4px;
+                background-color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+}

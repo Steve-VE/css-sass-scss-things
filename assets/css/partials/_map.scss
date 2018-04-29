@@ -1,0 +1,44 @@
+.circle, .losange, .triangle{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 0;
+
+    transition: top $transition-delay, background-color $transition-delay;
+
+    &:active{
+        top: -50px;
+    }
+
+    @each $color in $colors-name{
+        &.#{$color}{
+            background-color: map-get($colors, $color );
+            border: 8px solid map-get($colors, $color );
+
+            &:active{
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.circle{
+    // clip-path: circle(50% at center);
+    border-radius: 50%;
+}
+.losange{
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.triangle{
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.container{
+    position: relative;
+    width: auto;
+    height: auto;
+
+    top: 50%;
+}

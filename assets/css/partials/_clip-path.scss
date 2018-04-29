@@ -1,0 +1,39 @@
+.clip-path{
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+
+    background-color: goldenrod;
+    
+    transition: clip-path $transition-delay, background-color $transition-delay;
+
+    
+    &.cp-circle{
+        clip-path: circle(60%);
+        border: $border-style;
+        
+        &:active{
+            background-color: red;
+            clip-path: circle(25% at 0 50%);
+        }
+    }
+    
+    &.cp-polygon{
+        clip-path: polygon(0 0, 100% 50%, 50% 100%, 25% 50%);
+        
+        &:active{
+            background-color: blueviolet;
+            // clip-path: polygon(0% 50%, 100% 100%, 50% 0%);
+            clip-path: polygon(50% 0%, 100% 100%, 0% 50%, 40% 40%);
+        }
+    }
+
+    &.cp-inset{
+        clip-path: inset(10px 20px);
+        
+        &:active{
+            background-color:  olivedrab;
+            clip-path: inset(100px 100px);
+        }
+    }
+}
