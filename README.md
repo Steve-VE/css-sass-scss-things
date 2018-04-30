@@ -1,5 +1,6 @@
 # css-sass-scss-things
 Veille du 30/04
+### [Lien vers le diapo Ludus](https://app.ludus.one/47707fac-8082-4ef1-8787-d3ba6e5ead67#1)
 
 ## Background Gradient
 En *_CSS_*, il est possible de placer des dégradés (linéaire ou radial) en tant que background (`background-image` plus précisément !).
